@@ -7,6 +7,11 @@
 node_modules: yarn.lock
 	yarn install
 
+.PHONY: clean
+clean:
+	if [ -d ./node_modules ]; then rm -r ./node_modules; fi
+	if [ -d ./build ]; then rm -r ./build; fi
+	
 .PHONY: prettier
 prettier: node_modules
 	node_modules/.bin/prettier --write **/*.js
