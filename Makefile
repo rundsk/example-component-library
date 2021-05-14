@@ -4,14 +4,14 @@
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE file.
 
-node_modules: yarn.lock
-	yarn install
+.PHONY: build
+build:
+	yarn node esbuild.js
 
 .PHONY: clean
 clean:
-	if [ -d ./node_modules ]; then rm -r ./node_modules; fi
 	if [ -d ./build ]; then rm -r ./build; fi
 	
 .PHONY: prettier
-prettier: node_modules
-	node_modules/.bin/prettier --write **/*.js
+prettier:
+	yarn run prettier --write **/*.js
