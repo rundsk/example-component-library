@@ -6,4 +6,10 @@
  * license that can be found in the LICENSE file.
  */
 
-export { default as Button } from './Button';
+function Button(props) {
+  return (
+    <button>Hello DSK!</button>
+  );
+}
+
+export default Button;
