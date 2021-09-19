@@ -9,7 +9,7 @@ const { pnpPlugin } = require('@yarnpkg/esbuild-plugin-pnp');
 const esbuild = require('esbuild');
 
 esbuild.build({
-  entryPoints: ['src/index.js'],
+  entryPoints: ['src/index.js', 'src/index.css'],
   bundle: true,
   sourcemap: true,
   format: 'esm',
@@ -17,5 +17,5 @@ esbuild.build({
   minify: process.env.MINIFY === 'y',
   plugins: [pnpPlugin()],
   watch: process.env.WATCH === 'y',
-  outfile: 'build/index.js',
+  outdir: 'build',
 }).catch(() => process.exit(1));
