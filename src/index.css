@@ -1,3 +1,8 @@
+.example-btn {
+  background-color: lightgray;
+  border-color: orange;
+}
+
 .rose::after {
   content: "🌹";
 }

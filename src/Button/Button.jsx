@@ -6,9 +6,9 @@
  * license that can be found in the LICENSE file.
  */
 
-function Button(props) {
+function Button({onClick}) {
   return (
-    <button>Hello DSK!</button>
+    <button className="example-btn" onClick={onClick}>Hello DSK!</button>
   );
 }
 
